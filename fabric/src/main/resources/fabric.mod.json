@@ -25,7 +25,7 @@
   ],
   "depends": {
     "fabricloader": ">=0.19.2",
-    "fabric": "*",
+    "fabric-api": "*",
     "geyser-fabric": "*",
     "minecraft": ">=${minecraft_version}",
     "java": ">=25"
