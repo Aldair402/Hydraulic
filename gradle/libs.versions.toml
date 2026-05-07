@@ -1,21 +1,21 @@
 [versions]
-mixin = "0.8.5"
-mixinextras = "0.3.5"
-geyser = "2.9.3-SNAPSHOT"
-auto-service = "1.0.1"
+mixin = "0.8.7"
+mixinextras = "0.5.4"
+geyser = "2.10.0-SNAPSHOT"
+auto-service = "1.1.1"
 pack-converter = "3.4.1-SNAPSHOT"
 indra = "4.0.0"
-shadow = "9.2.2"
-architectury-plugin = "3.4-SNAPSHOT"
-architectury-loom = "1.13-SNAPSHOT"
+shadow = "9.4.1"
+architectury-plugin = "3.5-SNAPSHOT"
+architectury-loom = "1.14-SNAPSHOT"
 asm = "5.2"
 
 # fabric
-fabric-loader = "0.18.2"
-fabric-api = "0.139.5+1.21.11"
+fabric-loader = "0.19.2"
+fabric-api = "0.148.0+26.1.2"
 
 # neoforge
-neoforge-version = "21.11.6-beta"
+neoforge-version = "26.1.2.43-beta"
 
 [libraries]
 mixin = { group = "org.spongepowered", name = "mixin", version.ref = "mixin" }
@@ -28,7 +28,7 @@ pack-converter = { group = "org.geysermc.pack", name = "converter", version.ref 
 indra = { group = "net.kyori", name  = "indra-common", version.ref = "indra" }
 shadow = { group = "com.gradleup.shadow", name = "com.gradleup.shadow.gradle.plugin", version.ref = "shadow" }
 architectury-plugin = { group = "architectury-plugin", name = "architectury-plugin.gradle.plugin", version.ref = "architectury-plugin" }
-architectury-loom = { group = "dev.architectury.loom", name = "dev.architectury.loom.gradle.plugin", version.ref = "architectury-loom" }
+architectury-loom = { group = "dev.architectury.loom-no-remap", name = "dev.architectury.loom-no-remap.gradle.plugin", version.ref = "architectury-loom" }
 asm = { group = "org.ow2.asm", name = "asm-debug-all", version.ref = "asm" }
 
 # Fabric

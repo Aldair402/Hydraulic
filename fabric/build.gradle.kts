@@ -16,13 +16,13 @@ configurations {
 }
 
 tasks {
-    remapJar {
+/*    remapJar {
         dependsOn(shadowJar)
         inputFile.set(shadowJar.get().archiveFile)
         archiveBaseName.set("${modId}-fabric")
         archiveClassifier.set("")
         archiveVersion.set("")
-    }
+    }*/
 
     shadowJar {
         archiveClassifier.set("dev-shadow")
@@ -35,9 +35,9 @@ tasks {
 }
 
 dependencies {
-    modImplementation(libs.fabric.loader)
-    modApi(libs.fabric.api)
-    common(project(":shared", configuration = "namedElements")) { isTransitive = false }
+    implementation(libs.fabric.loader)
+    api(libs.fabric.api)
+    common(project(":shared")) { isTransitive = false }
     compileOnly(libs.geyser.api)
 
     shadow(project(path = ":shared", configuration = "transformProductionFabric")) {
@@ -46,10 +46,10 @@ dependencies {
 
     compileOnly(libs.asm)
 
-    modRuntimeOnly(libs.pack.converter)
+    runtimeOnly(libs.pack.converter)
     includeTransitive(libs.pack.converter)
 
-    modLocalRuntime(libs.geyser.fabric) {
+    localRuntime(libs.geyser.fabric) {
         exclude(group = "io.netty")
         exclude(group = "io.netty.incubator")
     }

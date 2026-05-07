@@ -26,13 +26,13 @@ tasks {
         dependsOn(named("runDatagen")) // Make sure the sources jar gets our generated files
     }
 
-    remapJar {
+/*    remapJar {
         dependsOn(shadowJar)
         inputFile.set(shadowJar.get().archiveFile)
         archiveBaseName.set("${modId}-test-mod-fabric")
         archiveClassifier.set("")
         archiveVersion.set("")
-    }
+    }*/
 
     shadowJar {
         archiveClassifier.set("dev-shadow")
@@ -47,6 +47,6 @@ tasks {
 tasks.named("build") { dependsOn(tasks.named("runDatagen")) }
 
 dependencies {
-    modImplementation(libs.fabric.loader)
-    modApi(libs.fabric.api)
+    implementation(libs.fabric.loader)
+    api(libs.fabric.api)
 }

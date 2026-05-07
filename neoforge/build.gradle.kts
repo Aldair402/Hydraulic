@@ -30,25 +30,25 @@ dependencies {
         }
     }
 
-    common(project(":shared", configuration = "namedElements")) { isTransitive = false }
+    common(project(":shared")) { isTransitive = false }
     neoForge(libs.neoforge)
     compileOnly(libs.geyser.api)
 
     shadow(project(path = ":shared", configuration = "transformProductionNeoForge")) { isTransitive = false }
 
     // TODO fix neoforge runServer task
-    modRuntimeOnly(libs.pack.converter)
+    runtimeOnly(libs.pack.converter)
     includeTransitive(libs.pack.converter)
 }
 
 tasks {
-    remapJar {
+ /*   remapJar {
         dependsOn(shadowJar)
         inputFile.set(shadowJar.get().archiveFile)
         archiveBaseName.set("${modId}-neoforge")
         archiveClassifier.set("")
         archiveVersion.set("")
-    }
+    }*/
 
     shadowJar {
         archiveClassifier.set("dev-shadow")

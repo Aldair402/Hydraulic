@@ -2,7 +2,7 @@ plugins {
     id("hydraulic.publish-conventions")
     id("java-library")
     id("architectury-plugin")
-    id("dev.architectury.loom")
+    id("dev.architectury.loom-no-remap")
 }
 
 // These are provided by Minecraft already, no need to include em
@@ -43,6 +43,22 @@ tasks {
         // The remapped shadowJar is the final desired mod jar
         archiveVersion.set(project.version.toString())
         archiveClassifier.set("shaded")
+        mergeServiceFiles()
+    }
+
+    // This task combines the output of the "jar" task, which includes JiJ dependencies,
+    // and the shadowJar for the final jar.
+    // thanks bluemap
+    // https://github.com/BlueMap-Minecraft/BlueMap/blob/cfe73115dc4d1bdd97bc659f41364da65a6a2179/implementations/fabric/build.gradle.kts#L93-L107
+    register<Jar>("mergeShadowAndJarJar") {
+        dependsOn( tasks.shadowJar, tasks.jar )
+        // from sources / final name are configured in the respective projects
+        archiveVersion.set("")
+        archiveClassifier.set("")
+    }
+
+    build {
+        dependsOn(tasks.getByName("mergeShadowAndJarJar"))
     }
 }
 
@@ -60,5 +76,4 @@ afterEvaluate {
 
 dependencies {
     minecraft("com.mojang:minecraft:$minecraftVersion")
-    mappings(loom.officialMojangMappings())
 }
