@@ -31,14 +31,6 @@ tasks {
         archiveBaseName.set("${modId}-fabric")
     }
 
-/*    remapJar {
-        dependsOn(shadowJar)
-        inputFile.set(shadowJar.get().archiveFile)
-        archiveBaseName.set("${modId}-fabric")
-        archiveClassifier.set("")
-        archiveVersion.set("")
-    }*/
-
     shadowJar {
         archiveClassifier.set("dev-shadow")
         relocate("org.cloudburstmc", "org.geysermc.geyser.shaded.org.cloudburstmc")

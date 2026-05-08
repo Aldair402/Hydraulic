@@ -41,14 +41,6 @@ tasks {
         archiveBaseName.set("${modId}-test-mod-fabric")
     }
 
-/*    remapJar {
-        dependsOn(shadowJar)
-        inputFile.set(shadowJar.get().archiveFile)
-        archiveBaseName.set("${modId}-test-mod-fabric")
-        archiveClassifier.set("")
-        archiveVersion.set("")
-    }*/
-
     shadowJar {
         archiveClassifier.set("dev-shadow")
     }

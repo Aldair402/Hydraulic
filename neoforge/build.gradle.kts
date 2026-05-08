@@ -56,14 +56,6 @@ tasks {
         archiveBaseName.set("${modId}-neoforge")
     }
 
-    /*   remapJar {
-           dependsOn(shadowJar)
-           inputFile.set(shadowJar.get().archiveFile)
-           archiveBaseName.set("${modId}-neoforge")
-           archiveClassifier.set("")
-           archiveVersion.set("")
-       }*/
-
     shadowJar {
         archiveClassifier.set("dev-shadow")
     }
