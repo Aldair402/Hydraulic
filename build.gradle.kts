@@ -22,22 +22,22 @@ allprojects {
     }
 
     repositories {
-//        mavenLocal()
+        // mavenLocal()
         mavenCentral()
 
+        // Geyser, Floodgate, Cumulus etc.
         maven("https://repo.opencollab.dev/main")
-        maven("https://jitpack.io") {
-            content {
-                includeGroupByRegex("com\\.github\\..*")
-            }
-        }
 
+        // Fabric
         maven("https://maven.fabricmc.net/")
+
+        // NeoForge
         maven("https://maven.neoforged.net/releases")
-        
+
         // creative
         maven("https://repo.nexomc.com/releases/")
 
+        // Modrinth
         exclusiveContent {
             forRepository {
                 maven {

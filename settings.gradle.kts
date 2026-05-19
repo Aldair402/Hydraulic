@@ -2,7 +2,7 @@ enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 dependencyResolutionManagement {
     repositories {
-//        mavenLocal()
+        // mavenLocal()
         mavenCentral()
 
         gradlePluginPortal()
@@ -29,16 +29,6 @@ dependencyResolutionManagement {
 
         // Sponge Snapshots
         maven("https://repo.spongepowered.org/repository/maven-public/")
-
-        // PackConverter
-        maven("https://jitpack.io") {
-            content {
-                includeGroupByRegex("com\\.github\\..*")
-            }
-        }
-
-        // creative
-        maven("https://repo.nexomc.com/releases/")
     }
 }
 
@@ -46,19 +36,17 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
 
+        // Geyser, Floodgate, Cumulus etc.
         maven("https://repo.opencollab.dev/main/")
-        maven("https://jitpack.io") {
-            content {
-                includeGroupByRegex("com\\.github\\..*")
-            }
-        }
 
+        // Architectury
         maven("https://maven.architectury.dev/")
-        maven("https://maven.neoforged.net/releases")
-        maven("https://maven.fabricmc.net/")
 
-        // creative
-        maven("https://repo.nexomc.com/releases/")
+        // NeoForge
+        maven("https://maven.neoforged.net/releases")
+
+        // Fabric
+        maven("https://maven.fabricmc.net/")
     }
 
     plugins {
