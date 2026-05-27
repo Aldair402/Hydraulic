@@ -6,7 +6,7 @@ plugins {
 val minecraftVersion = project.property("minecraft_version") as String
 
 dependencies {
-    compileOnly("org.checkerframework:checker-qual:3.19.0")
+    compileOnly("org.checkerframework:checker-qual:4.1.0")
 }
 
 indra {
@@ -18,7 +18,7 @@ indra {
     mitLicense()
 
     javaVersions {
-        target(21)
+        target(25)
     }
 }
 

@@ -565,10 +565,19 @@ public class BlockPackModule extends PackModule<BlockPackModule> {
 
     @Nullable
     private static ModelTexture getModelTexture(@NotNull Map<String, ModelTexture> textures, @NotNull String key) {
+        return getModelTexture(textures, key, new HashSet<>());
+    }
+
+    @Nullable
+    private static ModelTexture getModelTexture(@NotNull Map<String, ModelTexture> textures, @NotNull String key, @NotNull Set<String> visited) {
+        if (!visited.add(key)) {
+            return null;
+        }
+
         // Texture references the value of another texture
         ModelTexture value = textures.get(key);
         if (value != null && value.reference() != null) {
-            return getModelTexture(textures, value.reference());
+            return getModelTexture(textures, value.reference(), visited);
         }
 
         return value;
