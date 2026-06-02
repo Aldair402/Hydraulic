@@ -3,7 +3,7 @@ name: Bug report
 about: Issues
 title: ''
 labels: bug
-assignees: PlixyMC
+assignees: ''
 
 ---
 
